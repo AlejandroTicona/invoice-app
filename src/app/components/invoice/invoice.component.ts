@@ -4,12 +4,12 @@ import { Invoice } from '../../models/invoice';
 import { InvoiceViewComponent } from '../invoice-view/invoice-view.component';
 import { ClientViewComponent } from '../client-view/client-view.component';
 import { CompanyViewComponent } from '../company-view/company-view.component';
-import { ListItemsComponent } from '../list-items/list-items.component';
+import { ListItemComponent } from '../list-item/list-item.component';
 
 @Component({
   selector: 'app-invoice',
   standalone: true,
-  imports: [InvoiceViewComponent, ClientViewComponent, CompanyViewComponent, ListItemsComponent],
+  imports: [InvoiceViewComponent, ClientViewComponent, CompanyViewComponent, ListItemComponent],
   templateUrl: './invoice.component.html'
 })
 export class InvoiceComponent implements OnInit{
