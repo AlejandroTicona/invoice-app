@@ -5,21 +5,31 @@ import { InvoiceViewComponent } from '../invoice-view/invoice-view.component';
 import { ClientViewComponent } from '../client-view/client-view.component';
 import { CompanyViewComponent } from '../company-view/company-view.component';
 import { ListItemComponent } from '../list-item/list-item.component';
+import { TotalComponent } from '../total/total.component';
 
 @Component({
   selector: 'app-invoice',
   standalone: true,
-  imports: [InvoiceViewComponent, ClientViewComponent, CompanyViewComponent, ListItemComponent],
+  imports: [
+    InvoiceViewComponent,
+    ClientViewComponent,
+    CompanyViewComponent,
+    ListItemComponent,
+    TotalComponent
+  ],
   templateUrl: './invoice.component.html'
 })
-export class InvoiceComponent implements OnInit{
+export class InvoiceComponent implements OnInit {
 
   invoice!: Invoice;
 
-  constructor(private service: InvoiceService){}
+  constructor(private service: InvoiceService) { }
 
   ngOnInit(): void {
-    
     this.invoice = this.service.getInvoice();
+  }
+
+  removeItem(id: number){
+    
   }
 }

@@ -18,17 +18,16 @@ export class InvoiceService {
 
   getInvoice(): Invoice {
     const total = this.calculateTotal();
-    return {... this.invoice, total };
+    return { ... this.invoice, total };
   }
 
   calculateTotal() {
     let total = 0;
     this.invoice.items.forEach(item => {
-      total += item.total();
+      total += (item.price * item.quantity);
     });
     return total;
-
     //reduce es un operador que reduce flujo
-    //return this.invoice.items.reduce((accumulator, item) => accumulator + item.total(), 0)
+    // return this.invoice.items.reduce((total, item) => total + (item.price * item.quantity),0);
   }
 }
