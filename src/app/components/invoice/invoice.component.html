@@ -16,8 +16,13 @@
         </div>
       </div>
       <div>
-        <list-item [items]="invoice.items" (removeEventEmitter)="removeItem($event)"/>
-        <total [total]="invoice.total"/>
+        <!--5. nuevamente aqui se recibe el id a traves de removeEventEmmiter y se lo manda al metodo removeItem($event) -->
+        <list-item
+          [items]="invoice.items"
+          (removeEventEmitter)="removeItem($event)"
+        />
+        <total [total]="invoice.total" />
+        <form-item (addItemEventEmitter)="addItem($event)"/>
       </div>
     </div>
   </div>

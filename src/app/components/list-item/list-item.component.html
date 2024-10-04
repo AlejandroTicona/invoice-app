@@ -12,6 +12,7 @@
   </thead>
   <tbody>
     @for(item of items; track $index){
+      <!-- 3. Aqui recibe removeEventEmitter del componente row, el mismo envia un id a -->
       <tr row-item [item]="item" (removeEventEmitter)="onRemove($event)"></tr>
     }
   </tbody>
